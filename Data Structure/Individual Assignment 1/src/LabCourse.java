@@ -1,3 +1,4 @@
+// Represents a lab-based course with weekly lab sessions.
 public class LabCourse implements Course {
     private String courseCode;
     private String courseTitle;
@@ -12,25 +13,34 @@ public class LabCourse implements Course {
         this.labHoursPerWeek = labHoursPerWeek;
         this.numberOfSessions = numberOfSessions;
     }
+
     @Override
     public String getCourseCode() {
         return courseCode;
     }
+
     @Override
     public String getCourseTitle() {
         return courseTitle;
     }
+
     @Override
     public String getInstructorName() {
         return instructorName;
     }
+
     @Override
     public int  calculateTotalWorkload() {
-        return (int) labHoursPerWeek * numberOfSessions * 14;
+        // Convert weekly lab hours into a semester workload.
+        return (int) (labHoursPerWeek * numberOfSessions * 14);
     }
 
     @Override
     public void printCourseDetails() {
         System.out.println("Lab Course: " + courseTitle + " (" + courseCode + ")");
-        System.out.println(" Instructor: " + instructorName);}
+        System.out.println(" Instructor: " + instructorName);
+        System.out.println(" Lab Hours/Week: : " + labHoursPerWeek);
+        System.out.println(" Number of Sessions: " + numberOfSessions);
+        System.out.println(" Total Workload (Semester): " + calculateTotalWorkload() + " hours");
+    }
     }

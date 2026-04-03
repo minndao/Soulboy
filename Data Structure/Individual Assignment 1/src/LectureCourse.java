@@ -1,3 +1,4 @@
+// Represents a lecture-based course.
 public class LectureCourse implements Course {
     private String courseCode;
     private String courseTitle;
@@ -11,23 +12,28 @@ public class LectureCourse implements Course {
         this.instructorName = instructorName;
         this.lectureHoursPerWeek = lectureHoursPerWeek;
     }
+
     @Override
     public String getCourseCode() {
         return courseCode;
     }
+
     @Override
     public String getCourseTitle() {
         return courseTitle;
     }
+
     @Override
     public int calculateTotalWorkload() {
         // Workload is lecture hours per week * number of weeks in a semester (assume 14weeks)
         return lectureHoursPerWeek * 14;
     }
+
     @Override
     public String getInstructorName() {
         return instructorName;
     }
+
     @Override
     public void printCourseDetails() {
         System.out.println("Lecture Course: " + courseTitle + " (" + courseCode + ")");
