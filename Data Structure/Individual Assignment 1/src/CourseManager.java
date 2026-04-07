@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.*;
 
 // Manages a collection of courses and provides common operations on them.
-public class CourseManager<T extends Course> {
+public class CourseManager<T extends Course>{
 
     private ArrayList<T> courses;
 
@@ -37,7 +37,7 @@ public class CourseManager<T extends Course> {
     // Sorts courses from lowest to highest workload.
     public void sortCoursesByWorkload() {
 
-        courses.sort(Comparator.comparing(Course::calculateTotalWorkload));
+            courses.sort(Comparator.comparing(Course::calculateTotalWorkload));
     }
 
     // Prints every course currently stored in the manager.
